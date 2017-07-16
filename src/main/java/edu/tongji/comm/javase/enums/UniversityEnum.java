@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * Created by chen on 2017/7/14.
+ * 枚举类，枚举了大学名及其代号
  */
 public enum  UniversityEnum {
 
