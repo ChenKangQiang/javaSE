@@ -1,4 +1,4 @@
-package edu.tongji.comm.javase.entity;
+package edu.tongji.comm.example.entity;
 
 import lombok.Data;
 

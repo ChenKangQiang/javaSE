@@ -1,4 +1,4 @@
-package edu.tongji.comm.javase.dynamicproxy;
+package edu.tongji.comm.example.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

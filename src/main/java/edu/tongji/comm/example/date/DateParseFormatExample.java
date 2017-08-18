@@ -1,4 +1,4 @@
-package edu.tongji.comm.javase.date;
+package edu.tongji.comm.example.date;
 
 import java.time.Instant;
 import java.time.LocalDate;

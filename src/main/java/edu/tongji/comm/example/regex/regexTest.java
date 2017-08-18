@@ -1,4 +1,4 @@
-package edu.tongji.comm.javase.regex;
+package edu.tongji.comm.example.regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

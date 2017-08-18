@@ -1,11 +1,10 @@
-package edu.tongji.comm.javase.json;
+package edu.tongji.comm.example.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
-import edu.tongji.comm.javase.entity.User;
+import edu.tongji.comm.example.entity.User;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

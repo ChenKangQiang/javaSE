@@ -1,4 +1,4 @@
-package edu.tongji.comm.javase.enums;
+package edu.tongji.comm.example.enums;
 
 import java.util.HashMap;
 import java.util.Map;
