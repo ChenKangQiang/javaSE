@@ -11,7 +11,7 @@ package edu.tongji.comm.design.pattern.singleton;
  */
 public class LazySingletonWithTwoCheck {
 
-    //volatile用于保证可见性，如果没有volatile，则第二重判断会不准确
+    //volatile用于保证可见性，如果没有volatile，则第二重判断会不准确，还是会出现多个实例
     private volatile static LazySingletonWithTwoCheck instance = null;
 
     private LazySingletonWithTwoCheck() { }

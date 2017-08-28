@@ -88,7 +88,27 @@ public class ClientTest {
 
     @Test
     public void testLazySingletonWithSynchronized() {
+        LazySingletonWithSynchronized singleton1, singleton2;
+        SingletonThreadWithSynchronized thread1 = new SingletonThreadWithSynchronized();
+        SingletonThreadWithSynchronized thread2 = new SingletonThreadWithSynchronized();
+        new Thread(thread1).start();
+        new Thread(thread2).start();
+        try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+        singleton1 = thread1.getLoadBalancer();
+        singleton2 = thread2.getLoadBalancer();
+        System.out.println(singleton1);
+        System.out.println(singleton2);
+
+        if (singleton1 != singleton2) {
+            System.out.println("对象不具有唯一性！");
+        } else {
+            System.out.println("对象具有唯一性！");
+        }
     }
 
 
