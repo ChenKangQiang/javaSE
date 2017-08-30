@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:application-context.xml"})
-public class ClientTest {
+public class Client {
 
     @Test
     public void test() {
