@@ -15,7 +15,8 @@ public class PrototypeManager {
     private Map<String, OfficialDocument> documents = Maps.newHashMap();
 
     private PrototypeManager() {
-
+        documents.put("FAR", new FAR());
+        documents.put("SRS", new SRS());
     }
 
     public static PrototypeManager getInstance() {
@@ -27,6 +28,29 @@ public class PrototypeManager {
             }
         }
         return prototypeManager;
+    }
+
+    /**
+     * 添加公文模板
+     * @param key
+     * @param document
+     */
+    public void addOfficialDocument(String key, OfficialDocument document) {
+        documents.put(key, document);
+    }
+
+    /**
+     * 浅克隆获取公文模板
+     * @param key
+     * @return
+     */
+    public OfficialDocument getOfficialDocument(String key) {
+        return  documents.get(key).clone();
+    }
+
+
+    public Map<String, OfficialDocument> getDocuments() {
+        return documents;
     }
 
 

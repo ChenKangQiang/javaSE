@@ -19,7 +19,7 @@ public class SRS implements OfficialDocument {
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
-        return null;
+        return document;
     }
 
     @Override
