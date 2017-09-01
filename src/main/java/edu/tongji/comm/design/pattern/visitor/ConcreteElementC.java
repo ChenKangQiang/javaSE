@@ -7,6 +7,6 @@ package edu.tongji.comm.design.pattern.visitor;
 public class ConcreteElementC implements Element {
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visit(this);
     }
 }
