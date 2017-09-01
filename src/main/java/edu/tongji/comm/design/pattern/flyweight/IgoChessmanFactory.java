@@ -25,11 +25,11 @@ public class IgoChessmanFactory {
     }
 
     private IgoChessmanFactory() {
-        IgoChessman black,white;
+        IgoChessman black, white;
         black = new BlackIgoChessman();
-        map.put("b",black);
+        map.put("b", black);
         white = new WhiteIgoChessman();
-        map.put("w",white);
+        map.put("w", white);
     }
 
     //返回享元工厂类的唯一实例
