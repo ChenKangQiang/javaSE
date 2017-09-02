@@ -1,4 +1,4 @@
-import edu.tongji.comm.javase.enums.UniversityEnum;
+import edu.tongji.comm.example.enums.UniversityEnum;
 
 /**
  * Created by chen on 2017/7/14.
