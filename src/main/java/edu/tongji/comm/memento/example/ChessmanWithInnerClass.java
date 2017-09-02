@@ -1,7 +1,6 @@
 package edu.tongji.comm.memento.example;
 
 import com.google.common.collect.Lists;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
@@ -26,7 +25,7 @@ public class ChessmanWithInnerClass {
         this.y = y;
     }
 
-    //使用内部类，这样的话，可以确保只有原发器才能生成备忘录
+    //使用私有静态内部类，这样的话，可以确保只有原发器才能生成备忘录，其他类均无法生成及修改备忘录
     @Data
     private static class ChessmanMemento {
         private String label;
