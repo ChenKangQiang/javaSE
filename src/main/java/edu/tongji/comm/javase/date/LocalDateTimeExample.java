@@ -21,6 +21,9 @@ public class LocalDateTimeExample {
         LocalDateTime specificDate = LocalDateTime.of(2014, Month.JANUARY, 1, 10, 10, 30);
         System.out.println("Specific Date=" + specificDate);
 
+        UserService userService = new UserService();
+        userService.getUser(100);
+
         //Try creating date by providing invalid inputs
         //LocalDateTime feb29_2014 = LocalDateTime.of(2014, Month.FEBRUARY, 28, 25,1,1);
         //Exception in thread "main" java.time.DateTimeException:
