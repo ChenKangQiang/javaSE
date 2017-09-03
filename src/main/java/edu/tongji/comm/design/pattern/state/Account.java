@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * @Author chenkangqiang
  * @Data 2017/9/3
- * 账户类
+ * 账户类，属于环境类
  */
 
 @Data

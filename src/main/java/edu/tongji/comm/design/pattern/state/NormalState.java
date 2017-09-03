@@ -3,6 +3,7 @@ package edu.tongji.comm.design.pattern.state;
 /**
  * @Author chenkangqiang
  * @Data 2017/9/3
+ * 具体状态类，内部封装了对象的变化及判断逻辑
  */
 public class NormalState extends AccountState {
 
