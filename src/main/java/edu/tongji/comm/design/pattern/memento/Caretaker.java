@@ -1,4 +1,4 @@
-package edu.tongji.comm.memento;
+package edu.tongji.comm.design.pattern.memento;
 
 /**
  * @Author chenkangqiang

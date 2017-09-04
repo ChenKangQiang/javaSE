@@ -1,4 +1,4 @@
-package edu.tongji.comm.memento.example;
+package edu.tongji.comm.design.pattern.memento.example;
 
 import com.google.common.collect.Lists;
 import lombok.Data;

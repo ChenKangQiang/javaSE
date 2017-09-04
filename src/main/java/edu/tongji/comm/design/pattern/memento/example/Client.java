@@ -1,4 +1,4 @@
-package edu.tongji.comm.memento.example;
+package edu.tongji.comm.design.pattern.memento.example;
 
 import org.junit.Test;
 
