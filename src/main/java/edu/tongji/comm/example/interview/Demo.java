@@ -1,5 +1,6 @@
 package edu.tongji.comm.example.interview;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -9,7 +10,6 @@ import java.util.Scanner;
 public class Demo {
 
     public static void main(String[] args) {
-
 
         Scanner scanner = new Scanner(System.in);
         int arrayNumber = scanner.nextInt();
