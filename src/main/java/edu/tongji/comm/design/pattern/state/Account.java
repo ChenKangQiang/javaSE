@@ -1,12 +1,12 @@
 package edu.tongji.comm.design.pattern.state;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * @Author chenkangqiang
  * @Data 2017/9/3
- * 账户类，属于环境类
+ * 账户类，属于环境类，与策略模式不同的是，
+ * 策略模式由环境来指定使用什么策略，而状态模式则是将状态变化封装在状态类内部，对环境类进行隐藏
  */
 
 @Data
@@ -50,4 +50,5 @@ public class Account {
     public void computeInterest() {
         state.computeInterest(); //调用状态对象的computeInterest()方法
     }
+
 }
