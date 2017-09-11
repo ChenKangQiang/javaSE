@@ -19,14 +19,12 @@ public class Demo {
 
         while(index <= arrayNumber) {
             int length = scanner.nextInt();
-            System.out.println(length);
-            String[] stringArray = scanner.nextLine().split(" ");
-            int[] intArray = new int[length];
+            int[] array = new int[length];
             for (int i = 0; i < length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
+                array[i] = scanner.nextInt();
             }
 
-            System.out.println(fun(intArray));
+            System.out.println(fun(array));
             index++;
         }
 
