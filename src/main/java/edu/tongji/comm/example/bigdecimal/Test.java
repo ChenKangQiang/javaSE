@@ -1,6 +1,4 @@
-package edu.tongji.comm.bigdecimal;
-
-import com.alibaba.fastjson.JSON;
+package edu.tongji.comm.example.bigdecimal;
 
 import java.math.BigDecimal;
 
