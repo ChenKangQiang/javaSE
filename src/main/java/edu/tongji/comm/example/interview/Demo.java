@@ -1,6 +1,5 @@
 package edu.tongji.comm.example.interview;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -16,35 +15,15 @@ public class Demo {
         System.out.println(arrayNumber);
 
         int index = 1;
-
         while(index <= arrayNumber) {
             int length = scanner.nextInt();
             int[] array = new int[length];
             for (int i = 0; i < length; i++) {
                 array[i] = scanner.nextInt();
             }
-
             System.out.println(fun(array));
             index++;
         }
-
-
-//        int length = scanner.nextInt();
-//        String[] stringArray = scanner.nextLine().split(" ");
-//        int[] intArray = new int[length];
-//        for (int i = 0; i < length; i++) {
-//            intArray[i] = Integer.parseInt(stringArray[i]);
-//        }
-//
-//        System.out.println(fun(intArray));
-
-
-//        int[] array = new int[]{1, 10, 100};
-//        int[] array1 = new int[]{1, 2, 3, 4};
-//        int[] array2 = new int[]{1, 3, 4};
-//        System.out.println(fun(array));
-//        System.out.println(fun(array1));
-//        System.out.println(fun(array2));
     }
 
 
