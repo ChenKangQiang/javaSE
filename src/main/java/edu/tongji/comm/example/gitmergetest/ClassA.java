@@ -5,4 +5,5 @@ package edu.tongji.comm.example.gitmergetest;
  * @Data 2017/9/12
  */
 public class ClassA {
+    private String nameA;
 }
