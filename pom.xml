@@ -67,6 +67,11 @@
             <artifactId>auto-service</artifactId>
             <version>1.0-rc3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
     </dependencies>
 
 
