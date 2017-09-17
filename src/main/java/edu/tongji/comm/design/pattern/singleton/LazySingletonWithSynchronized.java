@@ -13,7 +13,7 @@ public class LazySingletonWithSynchronized {
 
     }
 
-    //高并发下效率太低
+    //高并发下效率太低，每次去获取实例，均会锁住整个对象
     synchronized public static LazySingletonWithSynchronized getInstance1() {
         if (instance == null) {
             instance = new LazySingletonWithSynchronized();
