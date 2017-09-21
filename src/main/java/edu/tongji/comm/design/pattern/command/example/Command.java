@@ -1,4 +1,4 @@
-package edu.tongji.comm.design.pattern.command;
+package edu.tongji.comm.design.pattern.command.example;
 
 /**
  * @Author chenkangqiang

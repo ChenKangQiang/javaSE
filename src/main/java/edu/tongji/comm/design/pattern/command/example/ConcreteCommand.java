@@ -1,4 +1,4 @@
-package edu.tongji.comm.design.pattern.command;
+package edu.tongji.comm.design.pattern.command.example;
 
 /**
  * @Author chenkangqiang
@@ -7,6 +7,7 @@ package edu.tongji.comm.design.pattern.command;
  */
 
 import com.google.common.collect.Maps;
+import edu.tongji.comm.design.pattern.command.Adder;
 import lombok.Data;
 import java.util.Map;
 

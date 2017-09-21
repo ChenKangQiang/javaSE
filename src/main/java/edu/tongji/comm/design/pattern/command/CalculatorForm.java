@@ -1,5 +1,7 @@
 package edu.tongji.comm.design.pattern.command;
 
+import edu.tongji.comm.design.pattern.command.example.Command;
+
 /**
  * @Author chenkangqiang
  * @Data 2017/9/2
