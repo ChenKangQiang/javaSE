@@ -22,7 +22,8 @@ public class ThreadLocalDemo implements Runnable {
         int number = random.nextInt(100);
         //单例User
         User user = User.getInstance();
-        user.setName("Tom" + number);
+        System.out.println(user);
+        user.setName("Tom" + number );
         user.setEmail("Tom" + number + "@163.com");
         userThreadLocal.set(user);
         System.out.println(userThreadLocal.get());

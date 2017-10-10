@@ -14,6 +14,13 @@ public class Client {
         ThreadLocalDemo runnable1 = new ThreadLocalDemo();
         ThreadLocalDemo runnable2 = new ThreadLocalDemo();
         executorService.execute(runnable1);
+
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
         executorService.execute(runnable2);
 
         try {
