@@ -6,7 +6,8 @@ package edu.tongji.comm.example.multithread.singletonperthreadV2;
  *
  * 抽象工厂类
  */
-public interface Factory<T> {
 
+@FunctionalInterface
+public interface Factory<T> {
     T create();
 }

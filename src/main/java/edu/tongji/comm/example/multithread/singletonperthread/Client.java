@@ -16,6 +16,7 @@ public class Client {
     private static ExecutorService executorService = Executors.newCachedThreadPool();
 
     public static void main(String[] args) {
+        //测试不同线程的单例是否是同一个
         executorService.execute(new ThreadLocalSingleton());
         executorService.execute(new ThreadLocalSingleton());
         executorService.execute(new ThreadLocalSingleton());

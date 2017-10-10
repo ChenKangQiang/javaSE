@@ -9,7 +9,7 @@ import lombok.*;
 
 @Getter
 @Setter
-public class Car {
+public class Bike {
     private String name;
     private String price;
 }

@@ -6,7 +6,7 @@ import java.util.Random;
  * @Author chenkangqiang
  * @Data 2017/10/10
  *
- * 由于threadlocal与线程绑定，所以需要在线程中获取单例
+ * ThreadLocal与线程绑定，通过开辟线程来实现每个线程一个单例
  */
 public class ThreadLocalSingleton implements Runnable {
 

@@ -26,7 +26,7 @@ public class Singleton {
             };
 
     /**
-     * java8的话，可以使用withInitial()方法
+     * java8的话，可以使用withInitial()和lambda表达式
      */
     private static ThreadLocal<Singleton> threadLocallambda = ThreadLocal.withInitial(() -> new Singleton());
 
