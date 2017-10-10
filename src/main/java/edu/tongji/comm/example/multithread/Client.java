@@ -11,31 +11,27 @@ public class Client {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
-        ThreadLocalDemo runnable1 = new ThreadLocalDemo();
-        ThreadLocalDemo runnable2 = new ThreadLocalDemo();
-        executorService.execute(runnable1);
 
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
+        //线程A
+        executorService.execute(() -> {
+            Connection connection = ConnectionManager.getConnection();
+            System.out.println(Thread.currentThread().getName() + " : " + connection);
+        });
 
-        executorService.execute(runnable2);
-
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
+        //线程B
+        executorService.execute(() -> {
+            Connection connection = ConnectionManager.getConnection();
+            System.out.println(Thread.currentThread().getName() + " : " + connection);
+        });
 
         executorService.shutdown();
 
         /**
-         * Output:
-         * User(name=Tom26, email=Tom26@163.com)
-         * User(name=Tom26, email=Tom26@163.com)
+         * output:
+         * pool-1-thread-2 : edu.tongji.comm.example.multithread.Connection@7f44dae7
+         * pool-1-thread-1 : edu.tongji.comm.example.multithread.Connection@77884415
          */
+
     }
 
 }
