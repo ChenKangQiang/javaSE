@@ -14,4 +14,18 @@ public class OuterWithStaticInner {
         private String innerName;
     }
 
+    public static enum Code {
+
+        TYPE_A(1),
+        TYPE_B(2);
+
+
+        private int type;
+
+        private Code(int type) {
+            this.type = type;
+        }
+
+    }
+
 }

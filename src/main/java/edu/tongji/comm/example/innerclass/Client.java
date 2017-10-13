@@ -20,6 +20,7 @@ public class Client {
     @Test
     public void test2() {
         OuterWithStaticInner.Inner inner = new OuterWithStaticInner.Inner();
+        OuterWithStaticInner.Code type = OuterWithStaticInner.Code.TYPE_A;
         System.out.println(inner);
     }
 
