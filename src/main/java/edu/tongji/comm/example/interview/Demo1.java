@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @Author chenkangqiang
  * @Data 2017/9/9
  */
-public class Demo {
+public class Demo1 {
 
     public static void main(String[] args) {
 
