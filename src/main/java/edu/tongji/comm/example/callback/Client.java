@@ -13,7 +13,8 @@ import java.util.concurrent.TimeUnit;
 public class Client {
 
     public static void main(String[] args) {
-        MessageForwardService msf = new MessageForwardService(new MessageCallBackImpl());
+        MessageCallBack callBack = new MessageCallBackImpl();
+        MessageForwardService msf = new MessageForwardService(callBack);
 
         new Thread(() -> msf.deal()).start();
 

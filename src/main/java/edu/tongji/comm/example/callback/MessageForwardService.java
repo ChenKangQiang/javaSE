@@ -1,5 +1,6 @@
 package edu.tongji.comm.example.callback;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,7 +31,13 @@ public class MessageForwardService {
             e.printStackTrace();
         }
 
-        System.out.println(messageCallBack.respond("success"));
+        MessageCallBack.Message message = new MessageCallBack.Message();
+        message.setContent("hello");
+        message.setDate(new Date());
+        message.setFrom("Tom");
+        message.setTo("Mary");
+
+        messageCallBack.respond(message);
     }
 
 }
