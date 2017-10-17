@@ -1,6 +1,10 @@
 package edu.tongji.comm.example.innerclass;
 
 import org.junit.Test;
+import edu.tongji.comm.example.innerclass.Outer.Inner;
+import edu.tongji.comm.example.innerclass.Watcher.Event.KeeperState;
+import edu.tongji.comm.example.innerclass.Watcher.Event.EventType;
+
 
 /**
  * @author chenkangqiang
@@ -22,6 +26,11 @@ public class Client {
         OuterWithStaticInner.Inner inner = new OuterWithStaticInner.Inner();
         OuterWithStaticInner.Code type = OuterWithStaticInner.Code.TYPE_A;
         System.out.println(inner);
+    }
+
+
+    public void test3() {
+        KeeperState state = KeeperState.Disconnected;
     }
 
 
