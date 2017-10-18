@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public interface MessageCallBack {
 
-    void respond(MessageCallBack.Message message);
+    Message filter(MessageCallBack.Message message);
 
     @Data
     public static class Message {

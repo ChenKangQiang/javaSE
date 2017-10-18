@@ -9,10 +9,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class MessageForwardService {
 
-    /**
-     * 要完成回调，需要持有回调的具体实现
-     *
-     */
+
     private MessageCallBack messageCallBack;
 
     public MessageForwardService(MessageCallBack messageCallBack) {
@@ -23,7 +20,7 @@ public class MessageForwardService {
      * 消息处理
      * @return
      */
-    public void deal() {
+    public MessageCallBack.Message deal() {
         //模拟处理延时
         try {
             TimeUnit.MICROSECONDS.sleep(200);
@@ -37,7 +34,7 @@ public class MessageForwardService {
         message.setFrom("Tom");
         message.setTo("Mary");
 
-        messageCallBack.respond(message);
+        return messageCallBack.filter(message);
     }
 
 }

@@ -1,8 +1,7 @@
 package edu.tongji.comm.example.callback;
 
-import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.Date;
 
 /**
  * @Author chenkangqiang
@@ -11,12 +10,12 @@ import java.util.Date;
 
 public class MessageCallBackImpl implements MessageCallBack {
 
-    private Message response;
-
-
     @Override
-    public void respond(Message message) {
-        this.response = message;
-        System.out.println(response);
+    public Message filter(Message message) {
+        if (StringUtils.isNotEmpty(message.getFrom())) {
+            return message;
+        } else {
+            return null;
+        }
     }
 }

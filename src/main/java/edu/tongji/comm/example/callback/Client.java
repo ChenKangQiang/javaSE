@@ -16,15 +16,8 @@ public class Client {
         MessageCallBack callBack = new MessageCallBackImpl();
         MessageForwardService msf = new MessageForwardService(callBack);
 
-        new Thread(() -> msf.deal()).start();
-
-        try {
-            TimeUnit.MICROSECONDS.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("回调成功");
+        System.out.println(msf.deal());
+        System.out.println("异步回调成功");
     }
 
 }
