@@ -16,12 +16,14 @@ public class DempsterShaferTheory {
 
         List<double[]> listPBA = new ArrayList<>();
 
-        double[] doubles1 = {0.9, 0, 0.1};
-        double[] doubles2 = {0, 0.2, 0.8};
-        double[] doubles3 = {0, 0.2, 0.8};
+        double[] doubles1 = {0, 0.9, 0.1};
+        double[] doubles2 = {0.6, 0, 0.4};
+        double[] doubles3 = {0.6, 0, 0.4};
+//        double[] doubles4 = {0, 0.8, 0.2};
         listPBA.add(doubles1);
         listPBA.add(doubles2);
         listPBA.add(doubles3);
+//        listPBA.add(doubles4);
 
         double[] result = combineMass(listPBA);
         for (int i = 0; i < result.length; i++) {
@@ -41,13 +43,15 @@ public class DempsterShaferTheory {
             result[i] = listPBA.get(0)[i];
         }
 
-        for (int i = 1; i < listPBA.size() - 1; i++) {
+        for (int i = 1; i < listPBA.size(); i++) {
             double a = result[0];
             double b = result[1];
             double c = result[2];
             double k = a * listPBA.get(i)[0] + a * listPBA.get(i)[2]
                     + b * listPBA.get(i)[1] + b * listPBA.get(i)[2]
                     + c * listPBA.get(i)[0] + c * listPBA.get(i)[1] + c * listPBA.get(i)[2];
+
+            System.out.println("k=" + k);
 
             result[0] = (result[0] * listPBA.get(i)[0] + result[0] * listPBA.get(i)[2]
                     + result[2] * listPBA.get(i)[0]) / k;
