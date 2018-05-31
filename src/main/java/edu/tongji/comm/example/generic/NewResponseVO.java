@@ -24,7 +24,15 @@ public class NewResponseVO<K, T> extends ResponseVO<T> {
 }
 
 
+//子类的泛型参数和父类一样
+class NewResponseVO1<T> extends ResponseVO<T> {
+    @Override
+    public T doSomething() {
+        return null;
+    }
+}
 
+//继承时不指定父类的泛型参数，父类变为raw type
 class NewResponseVO2 extends ResponseVO {
 
     @Override
@@ -62,4 +70,8 @@ class NewResponseVO5<T> extends ResponseVO<Integer> {
         return null;
     }
 }
+
+
+
+
 
