@@ -16,9 +16,14 @@ public class Client {
         BigDecimal bigDecimal2 = new BigDecimal(11);
         BigDecimal bigDecimal4 = new BigDecimal("0.00");
         BigDecimal bigDecimal5 = new BigDecimal("129.00");
-        System.out.println(bigDecimal4.stripTrailingZeros().toString());
+        BigDecimal bigDecimal6 = new BigDecimal("139.99");
+        BigDecimal bigDecimal7 = new BigDecimal("100.00");
+        System.out.println(bigDecimal4.stripTrailingZeros().toPlainString());
+        System.out.println(bigDecimal5.stripTrailingZeros().toPlainString());
+        System.out.println(bigDecimal6.stripTrailingZeros().toPlainString());
         System.out.println(subZeroAndDot(bigDecimal4.toString()));
         System.out.println(subZeroAndDot(bigDecimal5.toString()));
+        System.out.println(bigDecimal7.stripTrailingZeros().toPlainString());
 
         //最好以String的方式来初始化BigDecimal，否则double和float都会出现经度丢失
         BigDecimal bigDecimal3 = new BigDecimal("12.999");
