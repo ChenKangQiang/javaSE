@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class Demo {
 
-
     public static void main(String[] args) {
         User user1 = new User("Tom", 20, Lists.newArrayList(1, 2, 3));
         User user2 = new User("Tom", 20, Lists.newArrayList(1, 2, 3));
