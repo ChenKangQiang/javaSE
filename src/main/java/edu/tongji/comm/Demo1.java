@@ -49,6 +49,9 @@ public class Demo1 {
         System.out.println(c == a);  //true
         System.out.println(a.equals(b));  //true
 
+        Long ccc = new Long(100L);
+        System.out.println(ccc.equals(100L));
+
     }
 
 
