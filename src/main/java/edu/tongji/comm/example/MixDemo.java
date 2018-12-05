@@ -3,6 +3,7 @@ package edu.tongji.comm.example;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.mchange.lang.ByteUtils;
+import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import sun.net.util.IPAddressUtil;
@@ -39,12 +40,26 @@ public class MixDemo {
 
     public static void main(String args[]) {
 
+        System.out.println(NumberUtils.toLong("123"));
+        System.out.println(NumberUtils.toInt("123"));
+
+        System.out.println(NumberUtils.toDouble("123.4"));
+        System.out.println(NumberUtils.toFloat("123.4"));
+        System.out.println("aaa" + 1);
+
+        PicConfig picConfig = JSON.parseObject("{\"width\":602,\"height\":250}", PicConfig.class);
+
         String en = encrypt(13475873453L);
         System.out.println(en);
 
         long de = decrypt(en);
         System.out.println(de);
 
+        System.out.println(encrypt(1L).toUpperCase());
+        System.out.println(encrypt(2L).toUpperCase());
+        System.out.println(encrypt(200L).toUpperCase());
+
+        System.out.println(getBeanName(MixDemo.class));
 
         List<String> tags1 = Lists.newArrayList("舞者", "DJ", "主场歌手");
         List<String> tags2 = Lists.newArrayList("hahhahha", "DJ", "主场歌手");
@@ -71,5 +86,19 @@ public class MixDemo {
         System.out.println(IPAddressUtil.isIPv6LiteralAddress(ipv6_7));
     }
 
+
+
+    public static String getBeanName(Class clazz) {
+        String simpleName = clazz.getSimpleName();
+        return Character.toLowerCase(simpleName.charAt(0)) + simpleName.substring(1);
+    }
+
+
+
+    @Data
+    public static class PicConfig {
+        private Integer width;
+        private Integer height;
+    }
 
 }

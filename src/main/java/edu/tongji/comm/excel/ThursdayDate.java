@@ -1,11 +1,9 @@
 package edu.tongji.comm.excel;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import edu.tongji.comm.example.poi.ReadXLSX;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,7 +11,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,7 +24,7 @@ public class ThursdayDate {
     private static Map<String, Coupon> mtCouponMap = Maps.newHashMap();
 
     public static void main(String[] args) {
-        read("coupon.xlsx");
+        read("coupon20181205.xlsx");
 
         System.out.println(JSON.toJSONString(dpCouponMap));
         System.out.println(dpCouponMap.size());
@@ -42,34 +39,34 @@ public class ThursdayDate {
         InputStream inputStream = ReadXLSX.class.getClassLoader().getResourceAsStream(filePath);
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            XSSFSheet sheet = workbook.getSheetAt(0);
+            XSSFSheet sheet = workbook.getSheetAt(2);
 
             for (int rowIndex = 1; rowIndex < sheet.getPhysicalNumberOfRows(); rowIndex++) {
                 try {
                     XSSFRow row = sheet.getRow(rowIndex);
-                    XSSFCell dpDealId = row.getCell(2);
-                    XSSFCell dpCouponId = row.getCell(3);
-                    XSSFCell price = row.getCell(4);
-                    XSSFCell mtDealId = row.getCell(5);
-                    XSSFCell mtCouponId = row.getCell(6);
+                    XSSFCell dpDealIds = row.getCell(0);
+                    XSSFCell mtDealIds = row.getCell(3);
+                    XSSFCell dpPrice = row.getCell(1);
+                    XSSFCell dpCouponId = row.getCell(2);
+                    XSSFCell mtCouponId = row.getCell(5);
+                    XSSFCell mtPrice = row.getCell(4);
 
-                    Coupon dpCoupon = new Coupon();
-                    Coupon mtCoupon = new Coupon();
+                    String[] dpDealIdArray = dpDealIds.getStringCellValue().split(",");
+                    String[] mtDealIdArray = mtDealIds.getStringCellValue().split(",");
 
-                    dpCoupon.setCouponGroupId((int) dpCouponId.getNumericCellValue());
-                    dpCoupon.setCouponPrice((int) price.getNumericCellValue());
-
-                    mtCoupon.setCouponGroupId((int) mtCouponId.getNumericCellValue());
-                    mtCoupon.setCouponPrice((int) price.getNumericCellValue());
-
-                    Coupon aaa = dpCouponMap.get((int) dpDealId.getNumericCellValue() + "");
-                    if (aaa != null) {
-                        System.out.println(rowIndex);
+                    for (String dpDealId : dpDealIdArray) {
+                        Coupon coupon = new Coupon();
+                        coupon.setCouponGroupId((int) dpCouponId.getNumericCellValue());
+                        coupon.setCouponPrice((int) dpPrice.getNumericCellValue());
+                        dpCouponMap.put(dpDealId, coupon);
                     }
 
-                    dpCouponMap.put((int) dpDealId.getNumericCellValue() + "", dpCoupon);
-                    mtCouponMap.put((int) mtDealId.getNumericCellValue() + "", mtCoupon);
-
+                    for (String mtDealId : mtDealIdArray) {
+                        Coupon coupon = new Coupon();
+                        coupon.setCouponGroupId((int) mtCouponId.getNumericCellValue());
+                        coupon.setCouponPrice((int) mtPrice.getNumericCellValue());
+                        mtCouponMap.put(mtDealId, coupon);
+                    }
                 } catch (Exception ex) {
                     System.out.println(rowIndex);
                     continue;
