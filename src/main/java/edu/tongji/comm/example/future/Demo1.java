@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 public class Demo1 {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
         Future future = executorService.submit(new Callable<Integer>() {
             @Override
@@ -21,6 +21,7 @@ public class Demo1 {
         });
 
         try {
+            System.out.println(future.isDone());
             System.out.println(future.get(2, TimeUnit.SECONDS));
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -31,7 +32,9 @@ public class Demo1 {
         }
 
         try {
-            System.out.println(future.get(10, TimeUnit.SECONDS));
+            System.out.println(future.isDone());
+            System.out.println(future.get(4, TimeUnit.SECONDS));
+            System.out.println(future.isDone());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
