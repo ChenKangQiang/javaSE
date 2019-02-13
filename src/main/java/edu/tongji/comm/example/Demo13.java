@@ -2,7 +2,9 @@ package edu.tongji.comm.example;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import lombok.Data;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Map;
 
@@ -29,6 +31,21 @@ public class Demo13 {
         System.out.println(object2.getMap());
         object1.getMap().put(2, "world");
         System.out.println(object2.getMap());
+
+        Map<String, String> testMap = Maps.newHashMap();
+        testMap.put("hello", "world");
+
+        testMap.remove("222");
+        testMap.remove("4444");
+
+        System.out.println(JSON.toJSONString(testMap));
+
+        System.out.println(CollectionUtils.containsAny(Sets.newHashSet(), Sets.newHashSet()));
+
+        System.out.println(JSON.toJSONString(new Class[]{Integer.class, int.class}));
+
+        System.out.println(String.format("入参%s", new Object()));
+
     }
 
 

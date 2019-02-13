@@ -1,4 +1,4 @@
-package edu.tongji.comm.example.concurrency_utils_demo.countdownlatch;
+package edu.tongji.comm.example.thread.concurrencyutils.countdownlatch;
 
 import java.util.ArrayList;
 import java.util.List;

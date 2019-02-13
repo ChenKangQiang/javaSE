@@ -1,4 +1,4 @@
-package edu.tongji.comm.example.concurrency_utils_demo.cyclicBarrier;
+package edu.tongji.comm.example.thread.concurrencyutils.cyclicBarrier;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
@@ -16,15 +16,19 @@ import java.util.concurrent.Executors;
  */
 public class App {
 
+    private static int TIME = 0;
+
     public static void main(String[] args) {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(4, () -> System.out.println("begin"));
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(4, () -> {
+            System.out.println("第" + TIME + "次");
+            TIME++;
+        });
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         for (int i = 0; i < 4; i++) {
-            executorService.execute(new Sportsman("Tom" + i, cyclicBarrier));
+            executorService.execute(new Sportsman("Tom" + i, cyclicBarrier, 10));
         }
 
         executorService.shutdown();
-
     }
 }

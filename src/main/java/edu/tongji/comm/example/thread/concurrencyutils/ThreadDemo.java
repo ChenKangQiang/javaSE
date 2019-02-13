@@ -1,4 +1,4 @@
-package edu.tongji.comm.example.concurrency_utils_demo;
+package edu.tongji.comm.example.thread.concurrencyutils;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
